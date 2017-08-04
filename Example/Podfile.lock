@@ -1,0 +1,22 @@
+PODS:
+  - Expecta (1.0.6)
+  - itmSDK (0.1.0)
+  - Specta (1.0.6)
+
+DEPENDENCIES:
+  - Expecta
+  - itmSDK (from `../`)
+  - Specta
+
+EXTERNAL SOURCES:
+  itmSDK:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
+  itmSDK: 754ad135d4b13f4796a65f929e5694dec76d91ee
+  Specta: f506f3a8361de16bc0dcf3b17b75e269072ba465
+
+PODFILE CHECKSUM: b5f09d128c79ed9e4f54fb60ac33c8d6170c571e
+
+COCOAPODS: 1.2.0

@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		045A64510285782AF51BB44A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		045A64510285782AF51BB44A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		2D00CA59E69EF73E97D67036 /* Pods_itmSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itmSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38FBF84879638CE961CD890B /* Pods-itmSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itmSDK_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-itmSDK_Example/Pods-itmSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* itmSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = itmSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,10 +59,10 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		6DAEB4355C4C66A82D596690 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		6DAEB4355C4C66A82D596690 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8A2A9E061C7476AB6CD996EF /* itmSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = itmSDK.podspec; path = ../itmSDK.podspec; sourceTree = "<group>"; };
+		8A2A9E061C7476AB6CD996EF /* itmSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = itmSDK.podspec; path = ../itmSDK.podspec; sourceTree = "<group>"; };
 		967A48E22712F4860681CA86 /* Pods-itmSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itmSDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-itmSDK_Tests/Pods-itmSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C0C23EE15657B2201FEF14F8 /* Pods-itmSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itmSDK_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-itmSDK_Tests/Pods-itmSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5245F02B3DA743E46D47C38 /* Pods_itmSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itmSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +250,10 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Clintlin;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 46HJEUMF7R;
+						ProvisioningStyle = Manual;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -524,12 +528,16 @@
 			baseConfigurationReference = 38FBF84879638CE961CD890B /* Pods-itmSDK_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 46HJEUMF7R;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "itmSDK/itmSDK-Prefix.pch";
 				INFOPLIST_FILE = "itmSDK/itmSDK-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "71b88fed-56d9-4a65-9cb0-08f0160b3061";
+				PROVISIONING_PROFILE_SPECIFIER = CommonDeveloper2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -539,12 +547,16 @@
 			baseConfigurationReference = D4BFACC7A8C049FAD6254E9E /* Pods-itmSDK_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 46HJEUMF7R;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "itmSDK/itmSDK-Prefix.pch";
 				INFOPLIST_FILE = "itmSDK/itmSDK-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "71b88fed-56d9-4a65-9cb0-08f0160b3061";
+				PROVISIONING_PROFILE_SPECIFIER = CommonDeveloper2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

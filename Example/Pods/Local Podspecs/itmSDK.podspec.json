@@ -1,0 +1,22 @@
+{
+  "name": "itmSDK",
+  "version": "0.1.0",
+  "summary": "A short description of itmSDK.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Clintlin/itmSDK",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Clintlin": "linguanjie@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Clintlin/itmSDK.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "itmSDK/Classes/**/*"
+}
