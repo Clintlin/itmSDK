@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'itmSDK_Example' do
+  pod 'itmSDK', :path => '../'
+
+  target 'itmSDK_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+  pod 'Expecta'
+  end
+end
