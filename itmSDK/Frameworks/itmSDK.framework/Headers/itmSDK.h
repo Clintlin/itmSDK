@@ -21,20 +21,20 @@ FOUNDATION_EXPORT const unsigned char itmSDKVersionString[];
 #import <itmSDK/itmPoint.h>
 
 // NS
-#import <itmSDK/itmDate.h>
 #import <itmSDK/itmFilePath.h>
-#import <itmSDK/itmObject.h>
-#import <itmSDK/itmString.h>
 #import <itmSDK/itmTimer.h>
+#import <itmSDK/NSDate+itmAddtions.h>
+#import <itmSDK/NSObject+itmAddtions.h>
+#import <itmSDK/NSString+itmAddtions.h>
+
 
 // UI
 #import <itmSDK/itmAnimation.h>
-#import <itmSDK/itmBaseView.h>
 #import <itmSDK/itmButton.h>
 #import <itmSDK/itmColor.h>
-#import <itmSDK/itmControl.h>
-#import <itmSDK/itmImage.h>
-#import <itmSDK/itmImageView.h>
+#import <itmSDK/UIImage+itmAdditions.h>
+#import <itmSDK/UIView+itmAdditions.h>
+
 
 // Void
 #import <itmSDK/itmUtilities.h>

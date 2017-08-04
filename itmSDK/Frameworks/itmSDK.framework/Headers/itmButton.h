@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "itmBaseView.h"
 
 typedef enum : NSUInteger {
     itmButtonTitleModeLeft,
@@ -17,7 +16,7 @@ typedef enum : NSUInteger {
 } itmButtonTitleMode;
 
 
-@interface itmButton : UIButton<itmViewDelegate>
+@interface itmButton : UIButton
 
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
 @property (nonatomic, assign) CGFloat margin;

@@ -1,15 +1,14 @@
 //
-//  itmDate.h
-//  itmSDK
+//  NSDate+timeFrame.h
+//  AYGameBox
 //
-//  Created by HeXingang on 2017/7/25.
-//  Copyright © 2017年 AiYou. All rights reserved.
+//  Created by Clintlin on 2017/3/24.
+//  Copyright © 2017年 Clintlin. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface itmDate : NSDate
-
+@interface NSDate (itmAddtions)
 /**
  返回当前时间戳
  */
@@ -20,5 +19,4 @@
  \params ext 文件名的后缀
  */
 + (NSString *) nameWithExtentxion:(NSString *)ext;
-
 @end

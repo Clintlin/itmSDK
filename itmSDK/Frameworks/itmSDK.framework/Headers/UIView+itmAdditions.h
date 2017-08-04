@@ -1,18 +1,18 @@
 //
-//  itmBaseView.h
-//  itmSDK
+//  UIView+Additions.h
+//  AYGameBox
 //
-//  Created by HeXingang on 2017/7/25.
-//  Copyright © 2017年 AiYou. All rights reserved.
+//  Created by Clintlin on 2017/3/24.
+//  Copyright © 2017年 Clintlin. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
+@interface UIView (itmAdditions)
 
-@protocol itmViewDelegate <NSObject>
 @property (nonatomic, assign) CGSize size;
-@property (nonatomic, assign) CGFloat x;
-@property (nonatomic, assign) CGFloat y;
+@property (nonatomic, assign) CGFloat originX;
+@property (nonatomic, assign) CGFloat originY;
 @property (nonatomic, assign) CGFloat width;
 @property (nonatomic, assign) CGFloat height;
 @property (nonatomic, assign) CGPoint leftTop;
@@ -20,23 +20,14 @@
 @property (nonatomic, assign) CGPoint leftBottom;
 @property (nonatomic, assign) CGPoint rightBottom;
 
+- (CGFloat)x;
+- (CGFloat)y;
 - (CGFloat)minX;
 - (CGFloat)midX;
 - (CGFloat)maxX;
 - (CGFloat)minY;
 - (CGFloat)midY;
 - (CGFloat)maxY;
-@end
-
-
-
-
-
-@interface itmBaseView : UIView<itmViewDelegate>
-
-
-
-
 
 /**
  圆角优化，每次使用将添加一个UIImageView到view上
@@ -53,5 +44,8 @@
 + (UIVisualEffectView *)blurViewWithFrame:(CGRect)frame style:(UIBlurEffectStyle)style;
 
 + (__kindof UIView *)loadNibNamed:(NSString *)name bundle:(NSString *)bundle owner:(id)owner;
+
+//+ (__kindof UIView *)loadNibWithOwner:(id)owner bundle:(NSString *)bundle;
+
 
 @end
