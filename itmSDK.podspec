@@ -30,7 +30,7 @@ This itmSDK for our project only.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'Frameworks/*'
+  s.source_files = '**/*'
   # s.preserve_paths = 'itmSDK/itmSDK.framework'
 
 s.source       = { :git => 'https://github.com/Clintlin/itmSDK.git', :tag => s.version.to_s, :commit => "master" }
