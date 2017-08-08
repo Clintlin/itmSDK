@@ -1,8 +1,8 @@
 {
   "name": "itmSDK",
   "version": "0.1.0",
-  "summary": "A short description of itmSDK.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "update itmSDK and try",
+  "description": "This itmSDK for our project only.",
   "homepage": "https://github.com/Clintlin/itmSDK",
   "license": {
     "type": "MIT",
@@ -11,12 +11,25 @@
   "authors": {
     "Clintlin": "linguanjie@gmail.com"
   },
-  "source": {
-    "git": "https://github.com/Clintlin/itmSDK.git",
-    "tag": "0.1.0"
-  },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "itmSDK/Classes/**/*"
+  "source_files": "Frameworks/**/*",
+  "source": {
+    "git": "https://github.com/Clintlin/itmSDK.git",
+    "tag": "0.1.0",
+    "commit": "master"
+  },
+  "frameworks": "UIKit",
+  "dependencies": {
+    "AFNetworking": [
+      "~> 3.1.0"
+    ],
+    "Masonry": [
+      "~> 1.0.2"
+    ],
+    "MBProgressHUD": [
+      "~> 1.0.0"
+    ]
+  }
 }

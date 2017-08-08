@@ -7,7 +7,9 @@
 //
 
 #import "itmViewController.h"
-
+//#import <itmS>
+#import <itmSDK/itmSDK.h>
+//#import "itmSDK.h"
 @interface itmViewController ()
 
 @end
@@ -18,6 +20,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
 }
 
 - (void)didReceiveMemoryWarning
