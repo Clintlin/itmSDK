@@ -22,31 +22,16 @@ This itmSDK for our project only.
                        DESC
 
   s.homepage         = 'https://github.com/Clintlin/itmSDK'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Clintlin' => 'linguanjie@gmail.com' }
-  # s.source           = { :git => 'https://github.com/Clintlin/itmSDK.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+
 
   s.ios.deployment_target = '8.0'
 
 
-
-  # # 模块bbb
-  # s.subspec 'Framework' do |ss|
-
-  #     # ss.source_files = 'itmSDK/**/**'
-  #     # ss.public_header_files = 'itmSDK/**/Headers/itmSDK.h'
-
-  #     # ss.dependency 'AAA/aaa'
-  # end
-
   s.ios.vendored_frameworks = 'itmSDK/Frameworks/*.framework'
-  # s.source_files = 'itmSDK/**'
-  # s.preserve_paths = 'itmSDK/itmSDK.framework'
+  s.source       = { :git => 'https://github.com/Clintlin/itmSDK.git', :tag => s.version.to_s, :commit => "master" }
 
-s.source       = { :git => 'https://github.com/Clintlin/itmSDK.git', :tag => s.version.to_s, :commit => "master" }
-# s.source_files  = 'Classes/*.{h,m}'
 
 
   s.framework = 'UIKit'
@@ -54,11 +39,4 @@ s.source       = { :git => 'https://github.com/Clintlin/itmSDK.git', :tag => s.v
   s.dependency 'Masonry', '~> 1.0.2'
   s.dependency 'MBProgressHUD', '~> 1.0.0'
 
-  # s.resource_bundles = {
-  #   'itmSDK' => ['itmSDK/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
