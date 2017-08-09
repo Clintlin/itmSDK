@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'itmSDK'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'fix document path bug'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,19 @@ This itmSDK for our project only.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = '**/*'
+
+
+  # # 模块bbb
+  # s.subspec 'Framework' do |ss|
+
+  #     # ss.source_files = 'itmSDK/**/**'
+  #     # ss.public_header_files = 'itmSDK/**/Headers/itmSDK.h'
+
+  #     # ss.dependency 'AAA/aaa'
+  # end
+
+  s.ios.vendored_frameworks = 'Frameworks/itmSDK.framework'
+  # s.source_files = 'itmSDK/**'
   # s.preserve_paths = 'itmSDK/itmSDK.framework'
 
 s.source       = { :git => 'https://github.com/Clintlin/itmSDK.git', :tag => s.version.to_s, :commit => "master" }

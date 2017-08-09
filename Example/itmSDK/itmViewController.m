@@ -7,9 +7,8 @@
 //
 
 #import "itmViewController.h"
-//#import <itmS>
 #import <itmSDK/itmSDK.h>
-//#import "itmSDK.h"
+
 @interface itmViewController ()
 
 @end
@@ -19,14 +18,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 
+    
+    itmTimer * timer = [[itmTimer alloc] initWithInterval:0.2 target:nil selector:nil];
+    [timer fire];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -10,9 +10,9 @@
 
 @interface NSString (itmAddtions)
 //json
-- (NSString *)jsonWithDictionary:(NSDictionary *)dict;
-- (NSString *)jsonWithArray:(NSArray *)arr;
-- (NSObject *)coverObjectFrom:(NSString *)json;
++ (NSString *)jsonWithDictionary:(NSDictionary *)dict;
++ (NSString *)jsonWithArray:(NSArray *)arr;
++ (NSObject *)converObjectFrom:(NSString *)json;
 
 /**
  self = unix时间戳

@@ -11,8 +11,8 @@
 @interface UIView (itmAdditions)
 
 @property (nonatomic, assign) CGSize size;
-@property (nonatomic, assign) CGFloat originX;
-@property (nonatomic, assign) CGFloat originY;
+@property (nonatomic, assign) CGFloat x;
+@property (nonatomic, assign) CGFloat y;
 @property (nonatomic, assign) CGFloat width;
 @property (nonatomic, assign) CGFloat height;
 @property (nonatomic, assign) CGPoint leftTop;
@@ -20,8 +20,6 @@
 @property (nonatomic, assign) CGPoint leftBottom;
 @property (nonatomic, assign) CGPoint rightBottom;
 
-- (CGFloat)x;
-- (CGFloat)y;
 - (CGFloat)minX;
 - (CGFloat)midX;
 - (CGFloat)maxX;
@@ -44,8 +42,5 @@
 + (UIVisualEffectView *)blurViewWithFrame:(CGRect)frame style:(UIBlurEffectStyle)style;
 
 + (__kindof UIView *)loadNibNamed:(NSString *)name bundle:(NSString *)bundle owner:(id)owner;
-
-//+ (__kindof UIView *)loadNibWithOwner:(id)owner bundle:(NSString *)bundle;
-
 
 @end
