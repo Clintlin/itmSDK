@@ -1,6 +1,6 @@
 {
   "name": "itmSDK",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "summary": "fix document path bug",
   "description": "This itmSDK for our project only.",
   "homepage": "https://github.com/Clintlin/itmSDK",
@@ -19,9 +19,10 @@
   },
   "source": {
     "git": "https://github.com/Clintlin/itmSDK.git",
-    "tag": "0.3.2",
+    "tag": "0.3.3",
     "commit": "master"
   },
+  "libraries": "icucore",
   "frameworks": "UIKit",
   "dependencies": {
     "AFNetworking": [

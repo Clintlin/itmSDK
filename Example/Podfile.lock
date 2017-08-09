@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - itmSDK (0.3.2):
+  - itmSDK (0.3.3):
     - AFNetworking (~> 3.1.0)
     - Masonry (~> 1.0.2)
     - MBProgressHUD (~> 1.0.0)
@@ -30,7 +30,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  itmSDK: ef300d9d0e66ff6717a9dbb1b342fab991a96f02
+  itmSDK: 7ac30710f80777035d21f53e8444c4ad394f88d9
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
 
