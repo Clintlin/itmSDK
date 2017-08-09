@@ -1,6 +1,6 @@
 {
   "name": "itmSDK",
-  "version": "0.2.0",
+  "version": "0.3.2",
   "summary": "fix document path bug",
   "description": "This itmSDK for our project only.",
   "homepage": "https://github.com/Clintlin/itmSDK",
@@ -15,11 +15,11 @@
     "ios": "8.0"
   },
   "ios": {
-    "vendored_frameworks": "Frameworks/itmSDK.framework"
+    "vendored_frameworks": "itmSDK/Frameworks/*.framework"
   },
   "source": {
     "git": "https://github.com/Clintlin/itmSDK.git",
-    "tag": "0.2.0",
+    "tag": "0.3.2",
     "commit": "master"
   },
   "frameworks": "UIKit",

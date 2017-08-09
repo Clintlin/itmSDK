@@ -302,7 +302,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${PODS_ROOT}/../../Frameworks/itmSDK.framework",
+				"${PODS_ROOT}/../../itmSDK/Frameworks/itmSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

@@ -1,0 +1,219 @@
+syntax = "proto3";
+package com.aiyou.gamecloud.entity;
+
+import "Message.proto";
+
+enum BigTalkCommand{
+    UN_USED=0;
+	SUCCESS = 200;//响应成功
+	FAIL = -200;//响应失败
+	FAIL_FN_NOT_OPEN = 189;//功能未开放
+
+	RT10000 = 10000;//发送P2P消息
+	RT10002 = 10002;//接收P2P消息
+	RT10003 = 10003;//P2P历史消息
+
+	RT12000 = 12000;//发送世界聊天
+	RT12002 = 12002;//接收世界聊天
+	RT12003 = 12003;//世界聊天历史消息
+
+	RT13000 = 13000;//发送公会消息
+	RT13001 = 13001;//接收公会消息
+	RT13002 = 13002;//公会历史消息查询
+
+	RT14000 = 14000;//发送组队聊天消息
+	RT14001 = 14001;//接收组队聊天消息
+	RT14002 = 14002;//组队聊天历史消息
+
+	RT15000 = 15000;//发送系统消息
+}
+
+/**
+ * 消息对象
+ */
+message Chat{
+  /**
+   * 本地msgid，校验使用
+   * 比如发送失败，可以重发此消息
+   */
+  string msgId=1;
+  /**
+   * 消息类型
+   */
+  MsgType msgType = 2;
+  /**
+   * 发送方uid
+   * 每个消息都需要注明发送者。尤其是世界聊天，群聊
+   */
+  string fromTicketId=3;
+  /**
+    *  昵称
+    *  发送者昵称
+    */
+  string fromNickName = 4;
+ /**
+    * 头像索引
+    * 发送者头像
+    */
+  string fromIcon = 5;
+  /**
+   * 接收方uid
+   */
+  string toTicketId = 6;
+  /**
+   * 消息内容
+   * 消息类型为text时，文本消息
+   */
+  string message = 7;
+  /**
+   * 群聊时，被@成员集合
+   */
+  repeated string callTicketIds = 8;
+  /**
+   * 时间戳
+   */
+  int64 time = 9;
+	/**
+    * 音频时间
+    */
+  int32 soundTime = 10;
+  
+  enum MsgType{
+  	  TEXT = 0;
+      IMAGE = 1;
+      AUDIO = 2;
+      VIDEO = 3;
+      LINK = 4;
+
+  }
+
+}
+
+/**
+ * 客户端发送P2P消息
+ */
+message request_10000{
+	Chat message=1;
+}
+
+message response_10000{
+	int32 result=1;
+	string msgId=2;
+	string message=3;
+}
+//接收P2P消息
+message response_10002{
+	Chat message=1;//P2P聊天体
+}
+/**
+ * 拉取私聊历史消息
+ */
+message request_10003{
+	string other = 1;//聊天人
+	int64 startTime = 2;//会话查询开始时间
+    int64 endTime = 3;//会话查询结束时间
+    PagePB pagePB = 4;//分页
+}
+message response_10003{
+	int32 resultCode=1;
+	string resultMessage=2;
+	repeated Chat message=3;
+	PagePB pagePB = 4;//分页
+}
+
+/**
+ * 发送世界聊天
+ */
+message request_12000{
+	/**
+	 * Msg.Chat
+	 */
+	Chat message=1;
+}
+message response_12000{
+	int32 result=1;
+	string msgId=2;
+	string message=3;
+}
+//接收世界消息
+message response_12002{
+	Chat message=1;
+}
+/**
+ * 查询世界聊天历史消息
+ */
+message request_12003{
+    int64 startTime = 1;//会话查询开始时间
+    int64 endTime = 2;//会话查询结束时间
+    PagePB pagePB = 3;//分页
+}
+message response_12003{
+	int32 resultCode=1;
+	string resultMessage=2;
+	repeated Chat message=3;
+	PagePB pagePB = 4;//分页
+}
+/**
+ *公会聊天
+ */
+message request_13000{
+	string guildId = 1;//公会id
+	Chat message=2;
+}
+message response_13000{
+	int32 resultCode=1;
+	string resultMessage=2;
+}
+//接收公会聊天消息
+message response_13001{
+	string guildId = 1;//公会id
+	Chat message=2;
+}
+/**
+ * 拉取公会历史消息
+ */
+message request_13002{
+   string guildId=1;//公会id
+   int64 startTime = 2;//会话查询开始时间
+   int64 endTime = 3;//会话查询结束时间
+   PagePB pagePB = 4;//分页
+}
+message response_13002{
+	int32 resultCode=1;
+	string resultMessage=2;
+	repeated Chat message=3;
+	PagePB pagePB = 4;//分页
+}
+/**
+ *组队聊天
+ */
+message request_14000{
+	string btId = 1;//组队id
+	Chat message=2;
+}
+message response_14000{
+	int32 resultCode=1;
+	string resultMessage=2;
+}
+//接收组队消息
+message response_14001{
+	string btId = 1;//组队id
+	Chat message=2;
+
+}
+/**
+ * 拉取组队历史消息
+ */
+message request_14002{
+   string btId=1;//公会id
+   int64 startTime = 2;//会话查询开始时间
+   int64 endTime = 3;//会话查询结束时间
+   PagePB pagePB = 4;//分页
+}
+message response_14002{
+	int32 resultCode=1;
+	string resultMessage=2;
+	repeated Chat message=3;
+	PagePB pagePB = 4;//分页
+}
+
