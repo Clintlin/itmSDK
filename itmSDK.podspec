@@ -33,8 +33,8 @@ This itmSDK for our project only.
   s.source       = { :git => 'https://github.com/Clintlin/itmSDK.git', :tag => s.version.to_s, :commit => "master" }
 
 
-
-  s.framework = 'UIKit'
+  s.libraries = 'icucore'
+  s.frameworks = 'UIKit'
   s.dependency 'AFNetworking', '~> 3.1.0'
   s.dependency 'Masonry', '~> 1.0.2'
   s.dependency 'MBProgressHUD', '~> 1.0.0'
