@@ -133,6 +133,7 @@
 		32D5ED0F9B4A3FFA873D03E7F369A8CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		34868A99C603319D61EC0C47A657A70A /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35311268AE3E90B19F7950D02D2B4F11 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		388E10D832917B0F16F342EBAA268948 /* itmSDKBus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = itmSDKBus.h; path = itmSDK/itmSDKBus.h; sourceTree = "<group>"; };
 		3D2077E87D26B658B68A50DF96058EC9 /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
 		41AD946145809FABE669E52FFAD582F5 /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
 		44C7091CDB854051E6A2E675561C53FE /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
@@ -179,6 +180,7 @@
 		A68683D07FDC84281DC59D160CD238FD /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
 		A95ED66A27D5617E90912722B89BF06B /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		A964B7167624D95D53827C3664924F57 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
+		ABEC66C98B553A2B2DE977DDD7C6B2D2 /* itmSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = itmSDK.framework; path = itmSDK/Frameworks/itmSDK.framework; sourceTree = "<group>"; };
 		AD136F178C444D06C6CBE9813CF40369 /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
 		AD3A98D24A5B0C7910CB17C7551CC641 /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AFNetworking.modulemap; sourceTree = "<group>"; };
 		B1274EB2AF24184725AFC899131BC9EA /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
@@ -206,14 +208,13 @@
 		EC791F8E000FA7867A8276E444F38FEB /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
 		ED232A455AECF542D429C7EEFC2274B7 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		EDA7195BA9C5EAEEB96C8D29B5A98727 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		EDD3D545F7BF2D4BD3CDC4BFF09FAB39 /* itmSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = itmSDK.framework; path = itmSDK/Frameworks/itmSDK.framework; sourceTree = "<group>"; };
 		EFBBE3F8CA8BF9084411303F075DECBD /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
 		F14D48AE1D92FB383E11EEF69500DAF4 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
 		F26C04731ADDE5B8CA2D4AC34061E229 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
 		F6C1DEC9FD898A1D3BD76F5248176BFA /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
-		F7C19A24EFA00AF265A320BCFC68691D /* WSDirectRoom.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WSDirectRoom.framework; path = itmSDK/Frameworks/WSDirectRoom.framework; sourceTree = "<group>"; };
 		F941384D4B25643D4FDA19B6F8368730 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		F9BDD52A32B9B335A54EFDE5C4B4A764 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF70C347C12ECE4A85E75A0E104E33A0 /* WSDirectRoom.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WSDirectRoom.framework; path = itmSDK/Frameworks/WSDirectRoom.framework; sourceTree = "<group>"; };
 		FFFC7497E43DDD851EAB55B7FE1D79BC /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -375,15 +376,6 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
-		5151F3EFC1BA5E3A34692E8C02862D32 /* itmSDK */ = {
-			isa = PBXGroup;
-			children = (
-				849CD093DCB32E0035EBF1DE06903479 /* Frameworks */,
-			);
-			name = itmSDK;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		5A8CE5A4F87CC7460C712C973333CA05 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,10 +404,10 @@
 			name = Security;
 			sourceTree = "<group>";
 		};
-		7BD2773B372E8285703759E326AFBA08 /* Development Pods */ = {
+		7C41059F282532C858707AB1FED9C9AA /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5151F3EFC1BA5E3A34692E8C02862D32 /* itmSDK */,
+				C2C360FD2C0D42281EC71246204E16BF /* itmSDK */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -424,21 +416,12 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				7BD2773B372E8285703759E326AFBA08 /* Development Pods */,
+				7C41059F282532C858707AB1FED9C9AA /* Development Pods */,
 				F4CDA5FA9197A41E0081E84F932906EB /* Frameworks */,
 				ED3F1312AF7503F2544AF3D101C80BC8 /* Pods */,
 				BF65530026D681B4BA5C2616FB7718D8 /* Products */,
 				60BD9434357B2AE3D2D6CD985D6763D6 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		849CD093DCB32E0035EBF1DE06903479 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EDD3D545F7BF2D4BD3CDC4BFF09FAB39 /* itmSDK.framework */,
-				F7C19A24EFA00AF265A320BCFC68691D /* WSDirectRoom.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A5E2DFA68BF50B61B7ACF3D2E3C225D4 /* NSURLSession */ = {
@@ -466,6 +449,15 @@
 			path = "../Target Support Files/MBProgressHUD";
 			sourceTree = "<group>";
 		};
+		BE2D2C3F6C6BDF527F78A599ED18DF89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABEC66C98B553A2B2DE977DDD7C6B2D2 /* itmSDK.framework */,
+				FF70C347C12ECE4A85E75A0E104E33A0 /* WSDirectRoom.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BF65530026D681B4BA5C2616FB7718D8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +467,16 @@
 				46E2ED7379D15E9B159F24AFB774504A /* Pods_itmSDK_Example.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C2C360FD2C0D42281EC71246204E16BF /* itmSDK */ = {
+			isa = PBXGroup;
+			children = (
+				388E10D832917B0F16F342EBAA268948 /* itmSDKBus.h */,
+				BE2D2C3F6C6BDF527F78A599ED18DF89 /* Frameworks */,
+			);
+			name = itmSDK;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		D21565E1C98FD5ECAC7A00CB3A56363C /* Support Files */ = {

@@ -1,7 +1,7 @@
 {
   "name": "itmSDK",
   "version": "0.3.3",
-  "summary": "fix document path bug",
+  "summary": "include two frameworks for developing",
   "description": "This itmSDK for our project only.",
   "homepage": "https://github.com/Clintlin/itmSDK",
   "license": {
@@ -22,6 +22,7 @@
     "tag": "0.3.3",
     "commit": "master"
   },
+  "source_files": "itmSDK/*.h",
   "libraries": "icucore",
   "frameworks": "UIKit",
   "dependencies": {

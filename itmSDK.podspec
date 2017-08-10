@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'itmSDK'
   s.version          = '0.3.3'
-  s.summary          = 'fix document path bug'
+  s.summary          = 'include two frameworks for developing'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -31,6 +31,9 @@ This itmSDK for our project only.
 
   s.ios.vendored_frameworks = 'itmSDK/Frameworks/*.framework'
   s.source       = { :git => 'https://github.com/Clintlin/itmSDK.git', :tag => s.version.to_s, :commit => "master" }
+
+
+  s.source_files = 'itmSDK/*.h'
 
 
   s.libraries = 'icucore'
