@@ -5,10 +5,8 @@ message RequestMessage{
 	//请求类型
 	RequestType requestType=1;
 	enum RequestType {
-		//请求注册模块
+		//请求注册模块,用户注册需携带ID，昵称，头像,code
 		CLIENT_REGISTER=0;
-		//请求角色登录网关
-		CLIENT_REGISTER_RID=10;
 		//请求用户模块
 		CLIENT_TO_USER=1;
 		//请求游戏模块
@@ -21,12 +19,14 @@ message RequestMessage{
 		CLIENT_TO_FRIEND=5;
 		//请求直播模块
 		CLIENT_TO_LIVE=6;
+		//视频会议
+		CLIENT_TO_MEETING=7;
 		//请求排行榜模块
-		CLIENT_TO_RANK=7;
+		CLIENT_TO_RANK=8;
 		//请求公会模块
-		CLIENT_TO_GUILD=8;
+		CLIENT_TO_GUILD=9;
 		//请求背包模块
-		CLIENT_TO_KNAPSACK=9;
+		CLIENT_TO_KNAPSACK=10;
 		HEART=999;
 	}
 	//RequestMessage中属性gameId,serverId,ticket只有在网关注册时必填，其他请求不用填写
@@ -85,6 +85,15 @@ message KVEntry{
 	string key = 1;
 	string value = 2;
 }
+
+//基础用户数据
+message BaseUserInfo{
+	string ticketId = 1;
+	string nickName = 2;
+	string icon = 3;
+	string code = 4;
+}
+
 //角色基础信息
 message fullUserInfo{
 	//用户id

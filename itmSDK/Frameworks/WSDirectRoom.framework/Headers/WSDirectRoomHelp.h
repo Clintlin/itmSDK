@@ -11,7 +11,7 @@
 #import "Message.pbobjc.h"
 #import "SystemCommand.pbobjc.h"
 #import "LiveMessage.pbobjc.h"
-
+#import "BigTalkMessage.pbobjc.h"
  
 
 @protocol WSDirectRoomDelegate <NSObject>
@@ -46,8 +46,6 @@
 - (void)beginLive;
 //结束直播 返回对象 response_40003
 - (void)endLive;
-
-
 
  /** 获取直播列表 返回response_40004*/
 - (void)getLiveList:(NSString*)gameId status:(int32_t)status pageNumber:(int32_t)pageNumber size:(int32_t)size;
@@ -125,10 +123,18 @@
 //视频会议设置，返回response_40023对象
 - (void)SetMeetingMode:(NSString*)RoomNo meetingState:(int)meetingState;
 
-
 //申请连麦，返回response_41008对象
 - (void)requestLinkMic:(NSString*)RoomId;
 
 //释放连麦，返回response_41008对象
 - (void)freeLinkMic:(NSString*)RoomId;
+
+- (void)audioChatCreat:(NSMutableArray*)membersArray;
+
+- (void)audioChatInviteUser:(NSString*)name membersArray:(NSMutableArray*)membersArray;
+
+- (void)audioChatExit:(NSString*)name;
+
+- (void)audioChatSendMsg:(NSString*)name chat:(Chat *)chat;
+
 @end

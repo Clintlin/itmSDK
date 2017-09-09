@@ -247,11 +247,8 @@ typedef AIYOU_G_P_B_ENUM(RequestMessage_RequestType) {
    * of the field.
    **/
   RequestMessage_RequestType_AIYOU_G_P_BUnrecognizedEnumeratorValue = kAIYOU_G_P_BUnrecognizedEnumeratorValue,
-  /** 请求注册模块 */
+  /** 请求注册模块,用户注册需携带ID，昵称，头像,code */
   RequestMessage_RequestType_ClientRegister = 0,
-
-  /** 请求角色登录网关 */
-  RequestMessage_RequestType_ClientRegisterRid = 10,
 
   /** 请求用户模块 */
   RequestMessage_RequestType_ClientToUser = 1,
@@ -271,14 +268,17 @@ typedef AIYOU_G_P_B_ENUM(RequestMessage_RequestType) {
   /** 请求直播模块 */
   RequestMessage_RequestType_ClientToLive = 6,
 
+  /** 视频会议 */
+  RequestMessage_RequestType_ClientToMeeting = 7,
+
   /** 请求排行榜模块 */
-  RequestMessage_RequestType_ClientToRank = 7,
+  RequestMessage_RequestType_ClientToRank = 8,
 
   /** 请求公会模块 */
-  RequestMessage_RequestType_ClientToGuild = 8,
+  RequestMessage_RequestType_ClientToGuild = 9,
 
   /** 请求背包模块 */
-  RequestMessage_RequestType_ClientToKnapsack = 9,
+  RequestMessage_RequestType_ClientToKnapsack = 10,
   RequestMessage_RequestType_Heart = 999,
 };
 
@@ -473,6 +473,30 @@ typedef AIYOU_G_P_B_ENUM(KVEntry_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *key;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *value;
+
+@end
+
+#pragma mark - BaseUserInfo
+
+typedef AIYOU_G_P_B_ENUM(BaseUserInfo_FieldNumber) {
+  BaseUserInfo_FieldNumber_TicketId = 1,
+  BaseUserInfo_FieldNumber_NickName = 2,
+  BaseUserInfo_FieldNumber_Icon = 3,
+  BaseUserInfo_FieldNumber_Code = 4,
+};
+
+/**
+ * 基础用户数据
+ **/
+@interface BaseUserInfo : AIYOU_G_P_BMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *ticketId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *nickName;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *icon;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *code;
 
 @end
 

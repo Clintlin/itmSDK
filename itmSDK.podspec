@@ -26,14 +26,13 @@ This itmSDK for our project only.
   s.author           = { 'Clintlin' => 'linguanjie@gmail.com' }
 
 
+  s.user_target_xcconfig = { 'Enable_Bitcode' => 'NO' , 'GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS' => 'itm_DEBUG' }
+
   s.ios.deployment_target = '8.0'
 
 
   s.ios.vendored_frameworks = 'itmSDK/Frameworks/*.framework'
   s.source       = { :git => 'https://github.com/Clintlin/itmSDK.git', :tag => s.version.to_s, :commit => "master" }
-
-
-  s.source_files = 'itmSDK/*.h'
 
 
   s.libraries = 'icucore'
