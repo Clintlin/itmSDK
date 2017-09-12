@@ -223,6 +223,7 @@ message request_14000{
 message response_14000{
 	int32 resultCode=1;
 	string resultMessage=2;
+	string msgId = 3;//消息编号
 }
 //接收组队消息
 message response_14001{

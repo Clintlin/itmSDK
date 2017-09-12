@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'itmSDK'
-  s.version          = '0.3.3'
+  s.version          = '0.3.4'
   s.summary          = 'include two frameworks for developing'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-This itmSDK for our project only.
+This itmSDK for our project only. This framework for real device only(no i386)
                        DESC
 
   s.homepage         = 'https://github.com/Clintlin/itmSDK'

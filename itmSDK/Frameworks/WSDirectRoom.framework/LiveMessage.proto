@@ -60,6 +60,10 @@ enum ECommandId {
 
     RELEASE_COMMUNICATION=40025;//释放连麦权限
 
+    COMMANDID_40026 = 40026;//创建视频会议，带成员
+    COMMANDID_40027 = 40027;//加入视频会议,房间不存在，并创建
+
+
 
 
     //观众数变化时，通知主播
@@ -80,6 +84,8 @@ enum ECommandId {
 	MSG_MEETING_MODE = 41007;
 	//连麦权限通知
 	MSG_COMMUNICATION_PERMISSION = 41008;
+	//拉人视频会议通知
+	MSG_MEETING_INVITATION = 41009;
 
 
 
@@ -289,7 +295,7 @@ message MeetingUser{
 }
 //发起视频会议
 message request_40014{
-
+    string roomNo = 1;//可选的房间号
 }
 message response_40014{
 	int32 resultCode = 1;
@@ -300,6 +306,34 @@ message response_40014{
     bool  landLord = 6;//是否发起人
     int32 meetingState = 7;//房间状态 0:准备，1：语音互动,2：视频互动
     string invitationCode = 8;//邀请码
+}
+//创建视频会议，带成员
+message request_40026{
+	string meetingNO = 2;
+	repeated string users = 1;//被邀请进视频会议的成员
+}
+message response_40026{
+	int32 resultCode = 1;
+    string resultMessage = 2;
+    string meetingRoomNo = 3;//视频会议房间号
+    string meetingUrl = 4;//视频会议地址
+    int32 meetingState = 5;//房间状态 0:准备，1：语音互动,2：视频互动
+    string invitationCode = 6;//邀请码
+    repeated MeetingUser meetingUsers = 7;//房间成员：房间内ID
+    repeated string users = 8;//没有进入房间的用户
+}
+//加入视频会议,视频会议房间不存在，则创建
+message request_40027{
+	string meetingRoomNo = 1;//视频会议房间号
+}
+message response_40027{
+	int32 resultCode = 1;
+    string resultMessage = 2;
+    string meetingRoomNo = 3;//视频会议房间号
+    string meetingUrl = 4;//视频会议地址
+    int32 meetingState = 5;//房间状态 0:准备，1：语音互动,2：视频互动
+    string invitationCode = 6;//邀请码
+    MeetingUser meetingUser = 7;//房间成员：房间内ID
 }
 
 //连接视频会议服务器成功。 确认加入视频会议。返回邀请码
@@ -433,6 +467,11 @@ message response_41008{
 	string roomId = 1;//视频会议房间号
     bool flag = 2;//true 可以申请权限 false 不可以申请
     string ticketId = 3;//主播收到此消息，添加，取消小喇叭
+}
+//拉人视频会议
+message response_41009{
+	string invitationCode = 1;//邀请码
+    repeated MeetingUser users = 2;//视频会议成员
 }
 
 

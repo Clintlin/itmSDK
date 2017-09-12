@@ -129,6 +129,12 @@ typedef AIYOU_G_P_B_ENUM(ECommandId) {
   /** 释放连麦权限 */
   ECommandId_ReleaseCommunication = 40025,
 
+  /** 创建视频会议，带成员 */
+  ECommandId_Commandid40026 = 40026,
+
+  /** 加入视频会议,房间不存在，并创建 */
+  ECommandId_Commandid40027 = 40027,
+
   /** 观众数变化时，通知主播 */
   ECommandId_MsgAudienceUpdate = 41000,
 
@@ -155,6 +161,9 @@ typedef AIYOU_G_P_B_ENUM(ECommandId) {
 
   /** 连麦权限通知 */
   ECommandId_MsgCommunicationPermission = 41008,
+
+  /** 拉人视频会议通知 */
+  ECommandId_MsgMeetingInvitation = 41009,
 };
 
 AIYOU_G_P_BEnumDescriptor *ECommandId_EnumDescriptor(void);
@@ -867,10 +876,17 @@ typedef AIYOU_G_P_B_ENUM(MeetingUser_FieldNumber) {
 
 #pragma mark - request_40014
 
+typedef AIYOU_G_P_B_ENUM(request_40014_FieldNumber) {
+  request_40014_FieldNumber_RoomNo = 1,
+};
+
 /**
  * 发起视频会议
  **/
 @interface request_40014 : AIYOU_G_P_BMessage
+
+/** 可选的房间号 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *roomNo;
 
 @end
 
@@ -910,6 +926,123 @@ typedef AIYOU_G_P_B_ENUM(response_40014_FieldNumber) {
 
 /** 邀请码 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *invitationCode;
+
+@end
+
+#pragma mark - request_40026
+
+typedef AIYOU_G_P_B_ENUM(request_40026_FieldNumber) {
+  request_40026_FieldNumber_UsersArray = 1,
+  request_40026_FieldNumber_MeetingNo = 2,
+};
+
+/**
+ * 创建视频会议，带成员
+ **/
+@interface request_40026 : AIYOU_G_P_BMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *meetingNo;
+
+/** 被邀请进视频会议的成员 */
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *usersArray;
+/** The number of items in @c usersArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger usersArray_Count;
+
+@end
+
+#pragma mark - response_40026
+
+typedef AIYOU_G_P_B_ENUM(response_40026_FieldNumber) {
+  response_40026_FieldNumber_ResultCode = 1,
+  response_40026_FieldNumber_ResultMessage = 2,
+  response_40026_FieldNumber_MeetingRoomNo = 3,
+  response_40026_FieldNumber_MeetingURL = 4,
+  response_40026_FieldNumber_MeetingState = 5,
+  response_40026_FieldNumber_InvitationCode = 6,
+  response_40026_FieldNumber_MeetingUsersArray = 7,
+  response_40026_FieldNumber_UsersArray = 8,
+};
+
+@interface response_40026 : AIYOU_G_P_BMessage
+
+@property(nonatomic, readwrite) int32_t resultCode;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *resultMessage;
+
+/** 视频会议房间号 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *meetingRoomNo;
+
+/** 视频会议地址 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *meetingURL;
+
+/** 房间状态 0:准备，1：语音互动,2：视频互动 */
+@property(nonatomic, readwrite) int32_t meetingState;
+
+/** 邀请码 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *invitationCode;
+
+/** 房间成员：房间内ID */
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<MeetingUser*> *meetingUsersArray;
+/** The number of items in @c meetingUsersArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger meetingUsersArray_Count;
+
+/** 没有进入房间的用户 */
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *usersArray;
+/** The number of items in @c usersArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger usersArray_Count;
+
+@end
+
+#pragma mark - request_40027
+
+typedef AIYOU_G_P_B_ENUM(request_40027_FieldNumber) {
+  request_40027_FieldNumber_MeetingRoomNo = 1,
+};
+
+/**
+ * 加入视频会议,视频会议房间不存在，则创建
+ **/
+@interface request_40027 : AIYOU_G_P_BMessage
+
+/** 视频会议房间号 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *meetingRoomNo;
+
+@end
+
+#pragma mark - response_40027
+
+typedef AIYOU_G_P_B_ENUM(response_40027_FieldNumber) {
+  response_40027_FieldNumber_ResultCode = 1,
+  response_40027_FieldNumber_ResultMessage = 2,
+  response_40027_FieldNumber_MeetingRoomNo = 3,
+  response_40027_FieldNumber_MeetingURL = 4,
+  response_40027_FieldNumber_MeetingState = 5,
+  response_40027_FieldNumber_InvitationCode = 6,
+  response_40027_FieldNumber_MeetingUser = 7,
+};
+
+@interface response_40027 : AIYOU_G_P_BMessage
+
+@property(nonatomic, readwrite) int32_t resultCode;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *resultMessage;
+
+/** 视频会议房间号 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *meetingRoomNo;
+
+/** 视频会议地址 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *meetingURL;
+
+/** 房间状态 0:准备，1：语音互动,2：视频互动 */
+@property(nonatomic, readwrite) int32_t meetingState;
+
+/** 邀请码 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *invitationCode;
+
+/** 房间成员：房间内ID */
+@property(nonatomic, readwrite, strong, null_resettable) MeetingUser *meetingUser;
+/** Test to see if @c meetingUser has been set. */
+@property(nonatomic, readwrite) BOOL hasMeetingUser;
 
 @end
 
@@ -1394,6 +1527,28 @@ typedef AIYOU_G_P_B_ENUM(response_41008_FieldNumber) {
 
 /** 主播收到此消息，添加，取消小喇叭 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *ticketId;
+
+@end
+
+#pragma mark - response_41009
+
+typedef AIYOU_G_P_B_ENUM(response_41009_FieldNumber) {
+  response_41009_FieldNumber_InvitationCode = 1,
+  response_41009_FieldNumber_UsersArray = 2,
+};
+
+/**
+ * 拉人视频会议
+ **/
+@interface response_41009 : AIYOU_G_P_BMessage
+
+/** 邀请码 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *invitationCode;
+
+/** 视频会议成员 */
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<MeetingUser*> *usersArray;
+/** The number of items in @c usersArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger usersArray_Count;
 
 @end
 

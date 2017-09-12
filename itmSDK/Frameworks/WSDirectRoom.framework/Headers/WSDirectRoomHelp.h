@@ -36,7 +36,7 @@
 - (void)closeServer;
 //登录服务器
 - (void)logInLiveServer: (NSString *)gameId serverId:(NSString *)serverId ticket:(NSString*)ticket
-                  token:(NSString*)token;
+                  token:(NSString*)token baseUserInfo:(BaseUserInfo *)baseUserInfo;
 
 //开始直播 返回对象 response_40001
 - (void)getLiveAddress;
@@ -129,12 +129,17 @@
 //释放连麦，返回response_41008对象
 - (void)freeLinkMic:(NSString*)RoomId;
 
-- (void)audioChatCreat:(NSMutableArray*)membersArray;
 
-- (void)audioChatInviteUser:(NSString*)name membersArray:(NSMutableArray*)membersArray;
+- (void)audioChatCreat:(NSString*)btid membersArray:(NSMutableArray*)membersArray;
+
+- (void)audioChatInviteUser:(NSString*)name membersArray:(NSArray*)membersArray;
+
+
 
 - (void)audioChatExit:(NSString*)name;
 
 - (void)audioChatSendMsg:(NSString*)name chat:(Chat *)chat;
+
+- (void)audioChatJoin:(NSString*)btId;
 
 @end

@@ -752,6 +752,7 @@ typedef AIYOU_G_P_B_ENUM(request_14000_FieldNumber) {
 typedef AIYOU_G_P_B_ENUM(response_14000_FieldNumber) {
   response_14000_FieldNumber_ResultCode = 1,
   response_14000_FieldNumber_ResultMessage = 2,
+  response_14000_FieldNumber_MsgId = 3,
 };
 
 @interface response_14000 : AIYOU_G_P_BMessage
@@ -759,6 +760,9 @@ typedef AIYOU_G_P_B_ENUM(response_14000_FieldNumber) {
 @property(nonatomic, readwrite) int32_t resultCode;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *resultMessage;
+
+/** 消息编号 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *msgId;
 
 @end
 
