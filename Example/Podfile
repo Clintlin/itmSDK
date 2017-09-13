@@ -1,6 +1,6 @@
 use_frameworks!
 
-target 'itmSDK_Example' do
+target 'itmSDKDemo_Example' do
   pod 'itmSDK', :path => '../'
   
 end

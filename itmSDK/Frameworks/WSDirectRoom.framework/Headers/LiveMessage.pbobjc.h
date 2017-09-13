@@ -1018,7 +1018,7 @@ typedef AIYOU_G_P_B_ENUM(response_40027_FieldNumber) {
   response_40027_FieldNumber_MeetingURL = 4,
   response_40027_FieldNumber_MeetingState = 5,
   response_40027_FieldNumber_InvitationCode = 6,
-  response_40027_FieldNumber_MeetingUser = 7,
+  response_40027_FieldNumber_MeetingUserArray = 7,
 };
 
 @interface response_40027 : AIYOU_G_P_BMessage
@@ -1040,9 +1040,9 @@ typedef AIYOU_G_P_B_ENUM(response_40027_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *invitationCode;
 
 /** 房间成员：房间内ID */
-@property(nonatomic, readwrite, strong, null_resettable) MeetingUser *meetingUser;
-/** Test to see if @c meetingUser has been set. */
-@property(nonatomic, readwrite) BOOL hasMeetingUser;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<MeetingUser*> *meetingUserArray;
+/** The number of items in @c meetingUserArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger meetingUserArray_Count;
 
 @end
 
@@ -1535,6 +1535,7 @@ typedef AIYOU_G_P_B_ENUM(response_41008_FieldNumber) {
 typedef AIYOU_G_P_B_ENUM(response_41009_FieldNumber) {
   response_41009_FieldNumber_InvitationCode = 1,
   response_41009_FieldNumber_UsersArray = 2,
+  response_41009_FieldNumber_MeetingNo = 3,
 };
 
 /**
@@ -1544,6 +1545,9 @@ typedef AIYOU_G_P_B_ENUM(response_41009_FieldNumber) {
 
 /** 邀请码 */
 @property(nonatomic, readwrite, copy, null_resettable) NSString *invitationCode;
+
+/** 房间号 */
+@property(nonatomic, readwrite, copy, null_resettable) NSString *meetingNo;
 
 /** 视频会议成员 */
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<MeetingUser*> *usersArray;

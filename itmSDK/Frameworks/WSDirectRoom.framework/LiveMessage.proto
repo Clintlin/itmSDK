@@ -333,7 +333,7 @@ message response_40027{
     string meetingUrl = 4;//视频会议地址
     int32 meetingState = 5;//房间状态 0:准备，1：语音互动,2：视频互动
     string invitationCode = 6;//邀请码
-    MeetingUser meetingUser = 7;//房间成员：房间内ID
+    repeated MeetingUser meetingUser = 7;//房间成员：房间内ID
 }
 
 //连接视频会议服务器成功。 确认加入视频会议。返回邀请码
@@ -471,6 +471,7 @@ message response_41008{
 //拉人视频会议
 message response_41009{
 	string invitationCode = 1;//邀请码
+	string meetingNo = 3;//房间号
     repeated MeetingUser users = 2;//视频会议成员
 }
 
