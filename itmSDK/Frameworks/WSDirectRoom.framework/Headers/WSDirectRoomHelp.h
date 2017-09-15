@@ -101,6 +101,7 @@
 /////////////////////////////////////////////////
 //视频会议
 ///////////////////
+#pragma mark - 视频聊天
 //获取会议室信息，返回response_40014对象
 - (void)GetMeetingRoomInfo;
 
@@ -122,6 +123,19 @@
 - (void) getMeetingMemberList:(NSString*)meetingRoomNo;
 //视频会议设置，返回response_40023对象
 - (void)SetMeetingMode:(NSString*)RoomNo meetingState:(int)meetingState;
+
+
+/**
+ 创建视频会议，带成员
+ @param roomId 房间id 若不传则服务器自动生成一个唯一字符串
+ @param userIds 用户id字符串逗号分隔 如："userid,userid"
+ */
+- (void)JoinMeetingWithRoomId:(NSString *)roomId userIds:(NSArray <NSString *> *)userIds;
+
+
+
+
+#pragma mark - 视频聊天 end
 
 //申请连麦，返回response_41008对象
 - (void)requestLinkMic:(NSString*)RoomId;
