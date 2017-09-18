@@ -103,7 +103,9 @@
 ///////////////////
 #pragma mark - 视频聊天
 //获取会议室信息，返回response_40014对象
-- (void)GetMeetingRoomInfo;
+- (void)GetMeetingRoomInfo __attribute__((deprecated("Use 'createWithRoomNo:' instead.")));
+//创建会议室，会议室ID选填，返回response_40014对象
+- (void)createWithRoomNo:(NSString *)roomNo;
 
 //开始视频会议，返回response_40015对象
 - (void)BeginMeeting:(NSString*)roomNo;
@@ -126,14 +128,19 @@
 
 
 /**
+ 返回response_40026对象
  创建视频会议，带成员
  @param roomId 房间id 若不传则服务器自动生成一个唯一字符串
  @param userIds 用户id字符串逗号分隔 如："userid,userid"
  */
-- (void)JoinMeetingWithRoomId:(NSString *)roomId userIds:(NSArray <NSString *> *)userIds;
+- (void)CreateMeetingWithRoomId:(NSString *)roomId userIds:(NSArray <NSString *> *)userIds;
 
-
-
+/**
+ 返回40027对象 
+ 加入视频会议,视频会议房间不存在，则创建返回40014
+ @param roomId 房间id 若不传则服务器自动生成一个唯一字符串
+ */
+- (void)JoinMeetingWithRoomId:(NSString *)roomId;
 
 #pragma mark - 视频聊天 end
 
