@@ -19,7 +19,7 @@
 #define itm_iOS9Later               ([UIDevice currentDevice].systemVersion.floatValue >= 9.0f)
 #define itm_iOS9_1Later             ([UIDevice currentDevice].systemVersion.floatValue >= 9.1f)
 #define itm_iOS10Later              ([UIDevice currentDevice].systemVersion.floatValue >= 10.f)
-
+#define itm_iOS11Later              ([UIDevice currentDevice].systemVersion.floatValue >= 11.f)
 
 #define itm_DEFAULTS                [NSUserDefaults standardUserDefaults]
 

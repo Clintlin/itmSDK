@@ -16,7 +16,6 @@ FOUNDATION_EXPORT const unsigned char itmSDKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <itmSDK/PublicHeader.h>
 
-
 // CG
 #import <itmSDK/itmPoint.h>
 
