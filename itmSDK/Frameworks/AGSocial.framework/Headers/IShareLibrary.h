@@ -9,7 +9,6 @@
 #ifndef ShareLibrary_hpp
 #define ShareLibrary_hpp
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 
 extern NSString* const kAGSocialOpenURLNotification;
 
@@ -31,12 +30,11 @@ void AGSocial_QQShareRegister(const char* appid);
 void AGSocial_OpenURL(NSURL* url);
  
     
-    void AGSocial_ShareVideoToWXSessionWithTitle(NSString * title,UIImage *image ,NSString * videoURL);
-    
-    void AGSocial_ShareVideoToWXTimelineWithTitle(NSString * title,UIImage *image ,NSString * videoURL);
+    void WXShareVideoWithTitle(const char* title, const char* description, const char* thumbImage);
     
     
 void WXShareTextMessage(const char* msg  , int sceneType);
+void WXShareImgDataMessage(NSData* imageData, int sceneType,const char*title,const char*description);
 void WXShareImgMessage(const char* path  , int sceneType,const char*title,const char*description,const char*thumbImage);
 
 void WXShareWebPageMessage(const char* url  , int sceneType,const char*title,const char*description,const char*thumbImage);

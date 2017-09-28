@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'itmSDK'
-  s.version          = '0.4.0'
+  s.version          = '0.4.1'
   s.summary          = 'include two frameworks for developing'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-This itmSDK for our project only. itmSDK update to version 2017.9.26 and AGSocial update the same version as well
+This itmSDK for our project only. AGSocial update to version 2017.9.28
                        DESC
 
   s.homepage         = 'https://github.com/Clintlin/itmSDK'
