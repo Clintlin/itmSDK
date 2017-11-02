@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'itmSDK'
-  s.version          = '0.4.1'
+  s.version          = '0.4.3'
   s.summary          = 'include two frameworks for developing'
 
 # This description is used to generate tags and improve search results.
@@ -38,7 +38,7 @@ This itmSDK for our project only. AGSocial update to version 2017.9.28
   s.libraries = 'icucore'
   s.frameworks = 'UIKit'
   s.dependency 'AFNetworking', '~> 3.1.0'
-  s.dependency 'Masonry', '~> 1.0.2'
+  s.dependency 'Masonry', '~> 1.1.0'
   s.dependency 'MBProgressHUD', '~> 1.0.0'
 
 end
